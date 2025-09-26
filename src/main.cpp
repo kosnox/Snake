@@ -37,41 +37,29 @@ int main()
     terminal_setColor(TC_GREEN, TC_DEFAULT);
     int32_t posX = 2, posY = 2;
     bool quit = false;
+    int32_t retVal = 0;
     while (!quit) {
-        terminal_setColor(TC_GREEN, TC_DEFAULT);
-        terminal_setCursorPos(posX, posY);
-        terminal_printf("*");
-        int key = terminal_getKey();
-        int32_t newPosX = posX;
-        int32_t newPosY = posY;
-        switch (key) {
-        case 's':
-            newPosY += 1;
-            break;
-        case 'a':
-            newPosX -= 1;
-            break;
-        case 'd':
-            newPosX += 1;
-            break;
-        case 'w':
-            newPosY -= 1;
-            break;
-        case 'q':
-            quit = true;
-            break;
+        if (!retVal) {
+            terminal_setColor(TC_GREEN, TC_DEFAULT);
+            terminal_setCursorPos(posX, posY);
+            terminal_printf("*");
+            int key = terminal_getKey();
+            int32_t newPosX = posX;
+            int32_t newPosY = posY;
+
+            quit = move_object(key, &newPosX, &newPosY);
+            retVal = collision_wall(newPosX, newPosY, 1, 1, MAX_X, MAX_Y);
+            //if (newPosY <= 1) newPosY = 2;
+            //if (newPosY >= MAX_Y - 1) newPosY = MAX_Y - 1;
+            //if (newPosX <= 1) newPosX = 2;
+            //if (newPosX >= MAX_X - 1) newPosX = MAX_X - 1;
+
+            terminal_setCursorPos(posX, posY);
+            terminal_setColor(TC_DEFAULT, TC_DEFAULT);
+            terminal_printf(" ");
+            posX = newPosX;
+            posY = newPosY;
         }
-
-        if (newPosY <= 1) newPosY = 2;
-        if (newPosY >= MAX_Y - 1) newPosY = MAX_Y - 1;
-        if (newPosX <= 1) newPosX = 2;
-        if (newPosX >= MAX_X - 1) newPosX = MAX_X - 1;
-
-         terminal_setCursorPos(posX, posY);
-         terminal_setColor(TC_DEFAULT, TC_DEFAULT);
-         terminal_printf(" ");
-         posX = newPosX;
-         posY = newPosY;
     }
     terminal_resetStyle();
     terminal_clearScreen();
