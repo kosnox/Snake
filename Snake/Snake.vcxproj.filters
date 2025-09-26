@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{c7e95b3d-1fc5-4e86-be47-2adeb1781bca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\terminal">
+      <UniqueIdentifier>{2cc52731-7f59-4f05-9655-0dae4788a814}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\terminal_in_out">
+      <UniqueIdentifier>{b5dc8ae8-059e-46e9-ba39-db18418f6d89}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\terminal\terminal.c">
+      <Filter>src\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\terminal_in_out\terminal_impl_stdio.c">
+      <Filter>src\terminal_in_out</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\terminal\terminal.h">
+      <Filter>src\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\terminal_in_out\terminal_impl_stdio.h">
+      <Filter>src\terminal_in_out</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
