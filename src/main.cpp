@@ -1,25 +1,17 @@
-// TerminalTest.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
-#include "terminal/terminal.h"
-#include "terminal_in_out/terminal_impl_stdio.h"
 #include <cstdio>
 #include <string.h>
 #include <stdlib.h>
 
+#include "terminal/terminal.h"
+#include "terminal_in_out/terminal_impl_stdio.h"
+#include "game/gamelogic.h"
 
 #define MAX_X 80
 #define MAX_Y 25
 
 void create_window();
 void print_frame(uint32_t x, uint32_t y);
-void change_position(int8_t option, int32_t* x, int32_t* y);
 
-
-void goto_xy(int x, int y)
-{
-    printf("\x1b[%d;%dH", x, y);
-}
 
 int main()
 {
@@ -84,18 +76,6 @@ int main()
     terminal_resetStyle();
     terminal_clearScreen();
     return 0;
-}
-
-void change_position(int8_t option, int32_t *p_x, int32_t* p_y)
-{
-    int32_t x;
-    int32_t y;
-    terminal_getCursorPos(&x, &y);
-    if (option == 1) {
-        *p_x = *p_x -1;
-    } else {
-        *p_y = *p_y-1;
-    }
 }
 
 

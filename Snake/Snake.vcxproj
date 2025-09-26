@@ -19,11 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\game\gamelogic.c" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\terminal\terminal.c" />
     <ClCompile Include="..\src\terminal_in_out\terminal_impl_stdio.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\game\gamelogic.h" />
     <ClInclude Include="..\src\terminal\terminal.h" />
     <ClInclude Include="..\src\terminal_in_out\terminal_impl_stdio.h" />
   </ItemGroup>

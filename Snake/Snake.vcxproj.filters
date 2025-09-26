@@ -22,6 +22,9 @@
     <Filter Include="src\terminal_in_out">
       <UniqueIdentifier>{b5dc8ae8-059e-46e9-ba39-db18418f6d89}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\game">
+      <UniqueIdentifier>{2d18c3b4-6ef5-490b-816e-53e4f87ec70a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
@@ -33,6 +36,9 @@
     <ClCompile Include="..\src\terminal_in_out\terminal_impl_stdio.c">
       <Filter>src\terminal_in_out</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\game\gamelogic.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\terminal\terminal.h">
@@ -40,6 +46,9 @@
     </ClInclude>
     <ClInclude Include="..\src\terminal_in_out\terminal_impl_stdio.h">
       <Filter>src\terminal_in_out</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\gamelogic.h">
+      <Filter>src\game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
